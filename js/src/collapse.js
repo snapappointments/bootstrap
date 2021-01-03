@@ -146,8 +146,9 @@ class Collapse extends BaseComponent {
 
     const container = SelectorEngine.findOne(this._selector)
     if (actives) {
-      const tempActiveData = actives.find(elem => container !== elem)
-      activesData = tempActiveData ? Data.getData(tempActiveData, DATA_KEY) : null
+      activesData = actives.find(elem => container !== elem) ?
+        Data.getData(tempActiveData, DATA_KEY) :
+        null
 
       if (activesData && activesData._isTransitioning) {
         return
